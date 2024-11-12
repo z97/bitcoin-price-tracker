@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+// functions/fetch-bitcoin-price.js
 
 exports.handler = async function(event, context) {
   try {
@@ -27,4 +27,3 @@ exports.handler = async function(event, context) {
     };
   }
 };
-
