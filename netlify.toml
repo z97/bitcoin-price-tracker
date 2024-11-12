@@ -4,6 +4,8 @@
 
 [functions]
   directory = "functions"
+  node_bundler = "esbuild"
+  node_version = "18"
 
 [functions."fetch-bitcoin-price"]
   node_bundler = "esbuild"
