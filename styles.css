@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 5%;
+  margin: 0;
+}
+
+#price {
+  font-size: 4vw;
+  color: #f2a900; /* Bitcoin Orange */
+}
+
+h1 {
+  font-size: 6vw;
+}
+
+@media (min-width: 768px) {
+  #price {
+    font-size: 2em;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+}
