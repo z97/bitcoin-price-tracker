@@ -1,3 +1,9 @@
 [build]
-  command = "pip install -r requirements.txt && python fetch_price.py"
+  command = ""
   publish = "."
+
+[functions]
+  directory = "functions"
+
+[functions."fetch-bitcoin-price"]
+  node_bundler = "esbuild"
