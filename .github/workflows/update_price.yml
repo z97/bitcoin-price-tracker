@@ -6,7 +6,7 @@ on:
   workflow_dispatch:        # Allows manual triggering
 
 permissions:
-  contents: write  # Allows pushing commits to the repository
+  contents: write
 
 jobs:
   build:
@@ -28,7 +28,7 @@ jobs:
 
       - name: Fetch and Update Bitcoin Price
         run: |
-          python fetch_price.py || exit 1
+          python fetch_price.py
 
       - name: Commit Changes
         env:
