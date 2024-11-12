@@ -1,3 +1,5 @@
+/* styles.css */
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -5,21 +7,46 @@ body {
   margin: 0;
 }
 
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 6vw;
+  margin-bottom: 0.5em;
+}
+
 #price {
   font-size: 4vw;
   color: #f2a900; /* Bitcoin Orange */
 }
 
-h1 {
-  font-size: 6vw;
+#attribution {
+  margin-top: 1em;
+  font-size: 2vw;
 }
 
+#attribution a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+#attribution a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for larger screens */
 @media (min-width: 768px) {
+  h1 {
+    font-size: 3em;
+  }
+
   #price {
     font-size: 2em;
   }
 
-  h1 {
-    font-size: 3em;
+  #attribution {
+    font-size: 1em;
   }
 }
