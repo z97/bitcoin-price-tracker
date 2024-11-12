@@ -2,7 +2,7 @@
 
 let cachedPrice = null;
 let lastFetchTime = 0;
-const CACHE_DURATION = 5 * 60 * 1000; // 60 seconds
+const CACHE_DURATION = 10 * 60 * 1000; // 10 minutes
 
 exports.handler = async function(event, context) {
   const currentTime = Date.now();
