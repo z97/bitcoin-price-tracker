@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
   <title>Bitcoin Price Tracker</title>
-  <style>
-    /* Your CSS styles */
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Current Bitcoin Price in USD</h1>
-  <div id="price">$89,093.75</div>
+  <div class="container">
+    <h1>Current Bitcoin Price in USD</h1>
+    <div id="price">Loading...</div>
+    <div id="attribution">
+      Data provided by <a href="https://www.coindesk.com/price/bitcoin" target="_blank" rel="noopener noreferrer">CoinDesk</a>
+    </div>
+  </div>
+
+  <script>
+    async function fetchBitcoinPrice() {
+      try {
+        const response = await fetch('/.netlify/functions/fetch-bitcoin-price');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        document.getElementById('price').textContent = `$${data.price}`;
+      } catch (error) {
+        console.error('Error fetching Bitcoin price:', error);
+        document.getElementById('price').textContent = 'Error fetching price.';
+      }
+    }
+
+    fetchBitcoinPrice();
+    setInterval(fetchBitcoinPrice, 60000); // Update every 60 seconds
+  </script>
 </body>
 </html>
