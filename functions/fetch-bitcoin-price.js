@@ -1,8 +1,13 @@
 // functions/fetch-bitcoin-price.js
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
+if (process.env.NETLIFY !== 'true') {
+  try {
+    require('dotenv').config();
+  } catch (e) {
+    // Dotenv not available; ignore
+  }
 }
+
 
 let cachedPrice = null;
 let lastFetchTime = 0;
