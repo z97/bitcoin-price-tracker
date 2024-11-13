@@ -26,23 +26,32 @@
   </div>
 
   <script>
-    async function fetchBitcoinPrice() {
-      try {
-        const response = await fetch('/.netlify/functions/fetch-bitcoin-price');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        document.getElementById('price').textContent = `$${data.price}`;
-      } catch (error) {
-        console.error('Error fetching Bitcoin price:', error);
-        document.getElementById('price').textContent = 'Error fetching price.';
+  async function fetchBitcoinPrice() {
+    try {
+      const response = await fetch('/.netlify/functions/fetch-bitcoin-price');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    }
+      const data = await response.json();
+      document.getElementById('price').textContent = `$${data.price}`;
 
-    fetchBitcoinPrice();
-    setInterval(fetchBitcoinPrice, 600000); // Update every 10 minutes
-  </script>
+      // Update structured data (if applicable)
+      const structuredData = document.getElementById('structured-data');
+      if (structuredData) {
+        const jsonLD = JSON.parse(structuredData.textContent);
+        jsonLD.currentExchangeRate.value = data.price;
+        structuredData.textContent = JSON.stringify(jsonLD);
+      }
+    } catch (error) {
+      console.error('Error fetching Bitcoin price:', error);
+      document.getElementById('price').textContent = 'Error fetching price.';
+    }
+  }
+
+  fetchBitcoinPrice();
+  setInterval(fetchBitcoinPrice, 60000); // Update every 60 seconds
+</script>
+
 
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQFBM7C9PF"></script>
