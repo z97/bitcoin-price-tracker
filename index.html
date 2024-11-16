@@ -25,9 +25,31 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+
+
+
+<header>
     <div class="container">
-      <h1>Current Bitcoin Price in USD</h1>
+      <h1>BitcoinUSDPrice.com</h1>
+    </div>
+ <div class="container">
+    <img src="images/Bitcoin_logo.svg" alt="Bitcoin Logo" style="height: 50px;">
+    <h1>BitcoinUSDPrice.com</h1>
+  </div>
+
+  
+  </header>
+
+  <!-- Price Display -->
+  <section id="price-display">
+    <div class="container">
+      <h2>Live Bitcoin Price in USD</h2>
       <div id="price">Loading...</div>
+    </div>
+  </section>
+
+
+
       <div id="attribution">
         Data provided by
         <a
@@ -42,7 +64,35 @@
           />
         </a>
       </div>
+
+
+
+    
+
+  <!-- Content Section -->
+  <section class="content">
+    <div class="container">
+      <h2>About Bitcoin</h2>
+      <p>Bitcoin is the first decentralized digital currency, enabling instant payments to anyone, anywhere in the world. It operates on a peer-to-peer network without a central authority.</p>
+
+      <h2>Why Monitor Bitcoin Prices?</h2>
+      <p>Bitcoin's price is known for its volatility. Monitoring real-time prices helps investors make informed decisions and stay updated with market trends.</p>
+
+      <h2>Stay Updated</h2>
+      <p>Bookmark BitcoinUSDPrice.com for quick access to the latest Bitcoin price in USD. We provide real-time updates to keep you informed.</p>
     </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; <script>document.write(new Date().getFullYear());</script> BitcoinUSDPrice.com. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+
+
 
     <script>
       async function fetchBitcoinPrice() {
