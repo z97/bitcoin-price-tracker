@@ -1,52 +1,101 @@
 /* styles.css */
 
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 5%;
+/* Reset styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Body styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container */
 .container {
-  max-width: 600px;
+  width: 90%;
+  max-width: 800px;
   margin: 0 auto;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 6vw;
-  margin-bottom: 0.5em;
+/* Header */
+header {
+  background-color: #f7931a; /* Bitcoin orange */
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
 }
 
-#price {
-  font-size: 4vw;
-  color: #f2a900; /* Bitcoin Orange */
+header h1 {
+  font-size: 2.5em;
 }
 
-#attribution {
-  margin-top: 1em;
-  font-size: 2vw;
+/* Price Display */
+#price-display {
+  background-color: #fff;
+  padding: 40px;
+  margin-top: -30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-#attribution a {
-  color: #0066cc;
-  text-decoration: none;
+#price-display h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-#attribution a:hover {
-  text-decoration: underline;
+#price-display #price {
+  font-size: 3em;
+  color: #f7931a;
 }
 
-/* Media query for larger screens */
-@media (min-width: 768px) {
-  h1 {
-    font-size: 3em;
-  }
+/* Content Section */
+.content {
+  margin-top: 40px;
+}
 
-  #price {
+.content h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.content p {
+  margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  margin-top: 40px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  header h1 {
     font-size: 2em;
   }
 
-  #attribution {
-    font-size: 1em;
+  #price-display h2 {
+    font-size: 1.5em;
+  }
+
+  #price-display #price {
+    font-size: 2.5em;
+  }
+
+  .content h2 {
+    font-size: 1.5em;
   }
 }
